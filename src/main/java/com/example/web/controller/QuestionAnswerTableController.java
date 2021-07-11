@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class
 QuestionAnswerTableController {
 
-    @Autowired
+   /* @Autowired
     QuestionAnswerTableDaoWebService questionAnswerTableDaoWebService;
 
     @GetMapping(value = "test")
@@ -89,5 +89,5 @@ QuestionAnswerTableController {
         questionAnswerTableDaoWebService.deleteById(id);
         modelAndView.setViewName("redirect:/test");
         return modelAndView;
-    }
+    }*/
 }

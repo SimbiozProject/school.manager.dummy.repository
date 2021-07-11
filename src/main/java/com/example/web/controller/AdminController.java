@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 public class AdminController {
 
-    private final AdminService adminService;
+    /*private final AdminService adminService;
 
     @Autowired
     public AdminController(AdminService adminService) {
@@ -165,5 +165,5 @@ public class AdminController {
         modelAndView.setViewName("redirect:/admin/statistic");
         return modelAndView;
     }
-
+*/
 }
