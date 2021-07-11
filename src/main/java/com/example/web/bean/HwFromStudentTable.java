@@ -24,18 +24,10 @@ public class HwFromStudentTable implements Serializable {
     @JoinColumn(name = "chat_id")
     private TgUserTable tgUserTable;
 
-    /*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "student_id")
-    private int studentId;*/
-
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "student_name")
-    private TgUserTable studentName;
-
     @Column(name = "lesson_number")
     private int lessonNumber;
 
     @Column(name = "students_hw")
     private String hwFromStudent;
+
 }

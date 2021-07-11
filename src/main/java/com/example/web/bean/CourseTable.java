@@ -27,10 +27,10 @@ public class CourseTable implements Serializable {
     private String courseName;
 
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseUser")
-    private Set<TgUserTable> userSet;
+   /* @OneToMany(mappedBy = "courseUser", fetch = FetchType.EAGER)
+    private Set<TgUserTable> userSet;*/
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupCourse")
+    @OneToMany(mappedBy = "groupCourse", fetch = FetchType.EAGER)
     private Set<GroupTable> groupSet;
 
 }

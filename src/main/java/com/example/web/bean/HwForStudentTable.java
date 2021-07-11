@@ -21,7 +21,7 @@ public class HwForStudentTable implements Serializable {
     private int hwForStudentsId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_number")
+    @JoinColumn(name = "group_id")
     private GroupTable groupHwForStudents;
 
     @Column(name = "lesson_number")

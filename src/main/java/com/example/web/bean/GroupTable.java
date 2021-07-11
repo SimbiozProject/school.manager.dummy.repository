@@ -19,18 +19,19 @@ public class GroupTable  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "group_id")
-    private Long idGroup;
+    private Long groupId;
 
     @Column(name = "group_number")
     private Long groupNumber;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="course_name")   // insertable=false, updatable=false)
+    @JoinColumn(name="course_id")   // insertable=false, updatable=false)
     private CourseTable groupCourse;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupUser")
+    @OneToMany(mappedBy = "groupUser", fetch = FetchType.EAGER)
     private Set<TgUserTable> tgUserSet;
 
     @OneToMany(mappedBy = "groupHwForStudents", fetch = FetchType.EAGER)
     private Set<HwForStudentTable> studentHw;
 }
+

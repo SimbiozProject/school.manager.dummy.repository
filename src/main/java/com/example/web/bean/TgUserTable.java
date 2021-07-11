@@ -19,8 +19,7 @@ import java.util.Date;
 public class TgUserTable implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "chat_id")
+    @Column(name = "chat_id", unique = true)
     private Long chatId;
 
     @OneToOne(mappedBy = "tgUserTable", cascade = CascadeType.ALL)
@@ -52,35 +51,19 @@ public class TgUserTable implements Serializable {
     @Column(name = "payment", columnDefinition = "false")
     private Boolean payment;
 
-
-
-   /* @Column(name = "first_name") - in crm
-    private String firstName;
-
-    @Column(name = "last_name") - in crm
-    private String lastName;
-*/
-    /*@Column(name="email", unique = true) - in crm
-    private String email;*/
-
-
-    /*@Column(name = "date_of_birthday") - in crm
-    private Date dateOfBirthday;*/
-
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    /*@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "course_name")     // insertable=false, updatable=false)
-    private CourseTable courseUser;
+    private CourseTable courseUser;*/
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_number") // insertable=false, updatable=false)
+    @JoinColumn(name = "group_id") // insertable=false, updatable=false)
     private GroupTable groupUser;
 
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.REMOVE)
+    /*@OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.REMOVE)
     private HwFromStudentTable fromStudent;
 
     @OneToOne(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.REMOVE)
-    private UserAnswerTable usersAnswers;
+    private UserAnswerTable usersAnswers;*/
 
 }

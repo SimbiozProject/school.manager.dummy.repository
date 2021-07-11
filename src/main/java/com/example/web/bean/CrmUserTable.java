@@ -15,10 +15,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "crm_registration")
 public class CrmUserTable implements Serializable {
-    /*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
-    private Long userId;*/
 
     @Id
     @JoinColumn(name = "user_chat_id")
