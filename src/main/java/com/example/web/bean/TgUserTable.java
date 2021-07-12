@@ -19,51 +19,50 @@ import java.util.Date;
 public class TgUserTable implements Serializable {
 
     @Id
-    @Column(name = "chat_id", unique = true)
-    private Long chatId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_user")
+    private Long id;
 
-    @OneToOne(mappedBy = "tgUserTable", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private CrmUserTable crmUserTable;
-
-    @OneToOne(mappedBy = "tgUserTable", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private HwFromStudentTable hwFromStudentTable;
-
-    @OneToOne(mappedBy = "tgUserTable", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private UserAnswerTable userAnswerTable;
-
-
-    @Column(name = "user_name")
+    @Column(name = "user_name", unique=true)
     private String userName;
 
-    @Column(name = "active", columnDefinition = "true")
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name="email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "active")
     private Boolean active;
 
-    @Column(name = "role", columnDefinition = "ROLE_USER")
+    @Column(name = "date_of_birthday")
+    private Date dateOfBirthday;
+
+    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private UserRoles roles;
 
-    @Column(name = "block_user", columnDefinition = "false")
-    private Boolean blockUser;
-
-    @Column(name = "payment", columnDefinition = "false")
-    private Boolean payment;
-
-    /*@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_name")     // insertable=false, updatable=false)
-    private CourseTable courseUser;*/
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="course_name")     // insertable=false, updatable=false)
+    private  CourseTable courseUser;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id") // insertable=false, updatable=false)
+    @JoinColumn(name="group_number") // insertable=false, updatable=false)
     private GroupTable groupUser;
 
+    @Column(name = "block_user")
+    private Boolean blockUser;
 
-    /*@OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.REMOVE)
+    @Column(name = "payment")
+    private Boolean payment;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.REMOVE)
     private HwFromStudentTable fromStudent;
 
     @OneToOne(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.REMOVE)
-    private UserAnswerTable usersAnswers;*/
+    private UserAnswerTable usersAnswers;
 
 }

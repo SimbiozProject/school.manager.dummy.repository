@@ -16,18 +16,17 @@ import java.io.Serializable;
 @Table(name = "hwFrom_students")
 public class HwFromStudentTable implements Serializable {
     @Id
-    @JoinColumn(name = "user_chat_id")
-    private Long chatId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "student_id")
+    private int studentId;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "chat_id")
-    private TgUserTable tgUserTable;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "student_name")
+    private TgUserTable studentName;
 
     @Column(name = "lesson_number")
     private int lessonNumber;
 
     @Column(name = "students_hw")
     private String hwFromStudent;
-
 }

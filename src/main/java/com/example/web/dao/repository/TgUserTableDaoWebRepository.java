@@ -1,24 +1,14 @@
 package com.example.web.dao.repository;
 
 
-import com.example.web.bean.CourseTable;
-import com.example.web.bean.GroupTable;
 import com.example.web.bean.TgUserTable;
-import com.example.web.bean.UserRoles;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface TgUserTableDaoWebRepository extends JpaRepository<TgUserTable, Long> {
 
-    TgUserTable findByUserName(String userName);
+    /*TgUserTable findByUserName(String userName);
 
     Optional<TgUserTable> findByFirstName(String userName);
 
@@ -56,6 +46,7 @@ public interface TgUserTableDaoWebRepository extends JpaRepository<TgUserTable, 
                          UserRoles roles, CourseTable courseUser, GroupTable groupUser);
 
 }
-/*
+*//*
 
- */
+     */
+}

@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -27,10 +26,10 @@ public class CourseTable implements Serializable {
     private String courseName;
 
 
-   /* @OneToMany(mappedBy = "courseUser", fetch = FetchType.EAGER)
-    private Set<TgUserTable> userSet;*/
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseUser")
+    private Set<TgUserTable> userSet;
 
-    @OneToMany(mappedBy = "groupCourse", fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupCourse")
     private Set<GroupTable> groupSet;
 
 }

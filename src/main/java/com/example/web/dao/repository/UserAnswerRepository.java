@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserAnswerRepository extends JpaRepository<UserAnswerTable, Long> {
 
-    UserAnswerTable findByUserName(String userName);
+   /* UserAnswerTable findByUserName(String userName);*/
 }
