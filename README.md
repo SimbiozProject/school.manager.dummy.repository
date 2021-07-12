@@ -1,1 +1,1 @@
-# school.manager.bot
+# school.manager.dummy.repository
