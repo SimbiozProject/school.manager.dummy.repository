@@ -14,17 +14,16 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @Table(name = "user_answer")
-public class UserAnswerTable implements Serializable {
-
+public class UserAnswerTable  implements Serializable {
 
     @Id
-    @JoinColumn(name = "user_chat_id")
-    private Long chatId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private Long id;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "chat_id")
-    private TgUserTable tgUserTable;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_name")
+    private TgUserTable userName;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id", nullable = false)

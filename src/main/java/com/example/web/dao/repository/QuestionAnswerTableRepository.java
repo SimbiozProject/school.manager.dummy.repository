@@ -3,15 +3,12 @@ package com.example.web.dao.repository;
 
 import com.example.web.bean.QuestionAnswerTable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface QuestionAnswerTableRepository extends JpaRepository<QuestionAnswerTable, Long> {
 
-    @Query(value = "SELECT * FROM question_answer WHERE id = ?", nativeQuery = true)
+   /* @Query(value = "SELECT * FROM question_answer WHERE id = ?", nativeQuery = true)
     QuestionAnswerTable findQuestionAnswerTablesById(Long id);
 
     @Transactional
@@ -24,5 +21,5 @@ public interface QuestionAnswerTableRepository extends JpaRepository<QuestionAns
     @Transactional
     @Modifying
     @Query(value = "DELETE FROM question_answer WHERE id = ?1", nativeQuery = true)
-    void deleteById(Long id);
+    void deleteById(Long id);*/
 }

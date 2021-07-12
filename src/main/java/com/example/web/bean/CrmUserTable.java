@@ -14,15 +14,14 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @Table(name = "crm_registration")
-public class CrmUserTable implements Serializable {
-
+public class CrmUserTable  implements Serializable {
     @Id
-    @JoinColumn(name = "user_chat_id")
-    private Long chatId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
+    private Long userId;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "chat_id")
+    @JoinColumn(name = "user_name", nullable = false)
     private TgUserTable tgUserTable;
 
     @Column(name = "first_name")

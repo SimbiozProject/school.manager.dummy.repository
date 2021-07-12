@@ -1,20 +1,11 @@
 package com.example.web.dao.service;
 
-import com.example.web.bean.CourseTable;
-import com.example.web.bean.GroupTable;
-import com.example.web.bean.TgUserTable;
-import com.example.web.bean.UserRoles;
-import com.example.web.dao.repository.TgUserTableDaoWebRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
-import java.util.List;
 
 @Service
 public class AdminService {
 
-    private final TgUserTableDaoWebRepository tgUserTableDaoWebRepository;
+    /*private final TgUserTableDaoWebRepository tgUserTableDaoWebRepository;
 
     @Autowired
     public AdminService(TgUserTableDaoWebRepository tgUserTableDaoWebRepository) {
@@ -54,5 +45,5 @@ public class AdminService {
 
     public void addUserToDB(TgUserTable newTgUser){
         tgUserTableDaoWebRepository.save(newTgUser);
-    }
+    }*/
 }

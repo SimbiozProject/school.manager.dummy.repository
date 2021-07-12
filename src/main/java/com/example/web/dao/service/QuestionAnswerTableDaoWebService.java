@@ -1,17 +1,12 @@
 package com.example.web.dao.service;
 
-import com.example.web.bean.QuestionAnswerTable;
-import com.example.web.dao.repository.QuestionAnswerTableRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 
 @Service
 public class QuestionAnswerTableDaoWebService {
 
-    @Autowired
+    /*@Autowired
     private QuestionAnswerTableRepository questionAnswerTableRepository;
 
     public List<QuestionAnswerTable> findAll() {
@@ -34,5 +29,5 @@ public class QuestionAnswerTableDaoWebService {
                                  String thirdAnswer, String fourthAnswer, String rightAnswer) {
         questionAnswerTableRepository.updateDataInTest(id, question, firstAnswer, secondAnswer,
                 thirdAnswer, fourthAnswer, rightAnswer);
-    }
+    }*/
 }

@@ -1,17 +1,11 @@
 package com.example.web.dao.service;
 
-import com.example.web.bean.TgUserTable;
-import com.example.web.dao.repository.TgUserTableDaoWebRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 public class TgUserTableDaoWebService {
 
-    @Autowired
+    /*@Autowired
     private TgUserTableDaoWebRepository tgUserTableDaoWebRepository;
 
     @Transactional
@@ -57,6 +51,6 @@ public class TgUserTableDaoWebService {
     @Transactional
     public Long countAll() {
         return tgUserTableDaoWebRepository.count();
-    }
+    }*/
 
 }

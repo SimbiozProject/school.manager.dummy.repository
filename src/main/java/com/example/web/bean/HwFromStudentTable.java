@@ -1,28 +1,27 @@
 package com.example.web.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
 @Builder
 @AllArgsConstructor
 @Entity
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
-@Table(name = "hwFrom_students")
+@Table(name = "hw_from_students")
 public class HwFromStudentTable implements Serializable {
     @Id
-    @JoinColumn(name = "user_chat_id")
-    private Long chatId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "student_id")
+    private Long studentId;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "chat_id")
-    private TgUserTable tgUserTable;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_name")
+    private TgUserTable studentName;
 
     @Column(name = "lesson_number")
     private int lessonNumber;

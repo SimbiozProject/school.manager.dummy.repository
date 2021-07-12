@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+//@Controller
 public class UserAnswerTableController {
-
+/*
     @Autowired
     private UserAnswerTableDaoWebService userAnswerTableDaoWebService;
 
@@ -32,5 +32,5 @@ public class UserAnswerTableController {
         ModelAndView modelAndView = new ModelAndView("/allUsersTest");
         modelAndView.addObject("listUserAnswerTable", userAnswerTableDaoWebService.findById(id));
         return modelAndView;
-    }
+    }*/
 }

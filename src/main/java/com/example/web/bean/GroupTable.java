@@ -1,37 +1,36 @@
 package com.example.web.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-@Data
 @Builder
 @AllArgsConstructor
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "student_group")
-public class GroupTable  implements Serializable {
+@ToString(exclude = {"tgUserSet", "studentHw"})
+public class GroupTable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "group_id")
-    private Long groupId;
+    private Long idGroup;
 
     @Column(name = "group_number")
     private Long groupNumber;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="course_id")   // insertable=false, updatable=false)
+    @JoinColumn(name = "course_name")   // insertable=false, updatable=false)
     private CourseTable groupCourse;
 
-    @OneToMany(mappedBy = "groupUser", fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupUser")
     private Set<TgUserTable> tgUserSet;
 
     @OneToMany(mappedBy = "groupHwForStudents", fetch = FetchType.EAGER)
     private Set<HwForStudentTable> studentHw;
-}
 
+}

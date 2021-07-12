@@ -1,23 +1,9 @@
 package com.example.web.controller;
 
-import com.example.web.bean.CourseTable;
-import com.example.web.bean.GroupTable;
-import com.example.web.bean.TgUserTable;
-import com.example.web.bean.UserRoles;
-import com.example.web.dao.service.AdminService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-
-import java.util.Date;
-import java.util.List;
-
-@Controller
+//@Controller
 public class AdminController {
 
-    private final AdminService adminService;
+    /*private final AdminService adminService;
 
     @Autowired
     public AdminController(AdminService adminService) {
@@ -165,5 +151,5 @@ public class AdminController {
         modelAndView.setViewName("redirect:/admin/statistic");
         return modelAndView;
     }
-
+*/
 }

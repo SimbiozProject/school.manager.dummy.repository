@@ -1,16 +1,11 @@
 package com.example.web.dao.service;
 
-import com.example.web.bean.UserAnswerTable;
-import com.example.web.dao.repository.UserAnswerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserAnswerTableDaoWebService {
 
-    @Autowired
+    /*@Autowired
     private UserAnswerRepository userAnswerRepository;
 
     public Iterable<UserAnswerTable> findAll() {
@@ -23,5 +18,5 @@ public class UserAnswerTableDaoWebService {
 
     public Optional<UserAnswerTable> findById(Long id) {
         return userAnswerRepository.findById(id);
-    }
+    }*/
 }
