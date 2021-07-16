@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @Table(name = "user_answer")
-public class UserAnswerTable  implements Serializable {
+public class UserAnswer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,11 +23,11 @@ public class UserAnswerTable  implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_name")
-    private TgUserTable userName;
+    private TgUser userName;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id", nullable = false)
-    private QuestionAnswerTable questionAnswer;
+    private EnglishTest englishTest;
 
     @Column(name = "answer")
     private String answer;

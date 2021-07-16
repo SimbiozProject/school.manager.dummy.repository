@@ -3,7 +3,7 @@ package com.example.web.dao.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserAnswerTableDaoWebService {
+public class UserAnswerService {
 
     /*@Autowired
     private UserAnswerRepository userAnswerRepository;

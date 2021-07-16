@@ -2,7 +2,7 @@ package com.example.web.controller;
 
 //@Controller
 public class
-QuestionAnswerTableController {
+EnglishTestController {
 
    /* @Autowired
     QuestionAnswerTableDaoWebService questionAnswerTableDaoWebService;

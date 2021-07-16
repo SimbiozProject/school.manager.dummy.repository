@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @Table(name = "hw_for_students")
-public class HwForStudentTable implements Serializable {
+public class HwForStudent implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hw_id")
@@ -22,7 +22,7 @@ public class HwForStudentTable implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "group_number")
-    private GroupTable groupHwForStudents;
+    private Group groupHwForStudents;
 
     @Column(name = "lesson_number")
     private int lessonNumber;

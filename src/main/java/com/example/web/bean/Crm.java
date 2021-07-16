@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @Table(name = "crm_registration")
-public class CrmUserTable  implements Serializable {
+public class Crm implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
@@ -22,7 +22,7 @@ public class CrmUserTable  implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "user_name", nullable = false)
-    private TgUserTable tgUserTable;
+    private TgUser tgUser;
 
     @Column(name = "first_name")
     private String firstName;

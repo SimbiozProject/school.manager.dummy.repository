@@ -13,7 +13,7 @@ import java.io.Serializable;
 @ToString
 @NoArgsConstructor
 @Table(name = "hw_from_students")
-public class HwFromStudentTable implements Serializable {
+public class HwFromStudent implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "student_id")
@@ -21,7 +21,7 @@ public class HwFromStudentTable implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "student_name")
-    private TgUserTable studentName;
+    private TgUser studentName;
 
     @Column(name = "lesson_number")
     private int lessonNumber;

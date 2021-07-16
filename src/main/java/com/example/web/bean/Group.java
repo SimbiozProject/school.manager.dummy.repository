@@ -13,8 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(name = "student_group")
-@ToString(exclude = {"tgUserSet", "studentHw"})
-public class GroupTable implements Serializable {
+public class Group implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "group_id")
@@ -25,12 +24,7 @@ public class GroupTable implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "course_name")   // insertable=false, updatable=false)
-    private CourseTable groupCourse;
+    private Course groupCourse;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupUser")
-    private Set<TgUserTable> tgUserSet;
-
-    @OneToMany(mappedBy = "groupHwForStudents", fetch = FetchType.EAGER)
-    private Set<HwForStudentTable> studentHw;
 
 }

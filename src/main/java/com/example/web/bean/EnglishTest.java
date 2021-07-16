@@ -14,7 +14,17 @@ import java.util.Set;
 @ToString(exclude = "answerFromUser")
 @NoArgsConstructor
 @Table(name = "question_answer")
-public class QuestionAnswerTable implements Serializable {
+public class EnglishTest implements Serializable {
+
+    public EnglishTest(String question, String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer, String rightAnswer) {
+        this.question = question;
+        this.firstAnswer = firstAnswer;
+        this.secondAnswer = secondAnswer;
+        this.thirdAnswer = thirdAnswer;
+        this.fourthAnswer = fourthAnswer;
+        this.rightAnswer = rightAnswer;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -38,16 +48,6 @@ public class QuestionAnswerTable implements Serializable {
     @Column(name = "right_answer")
     private String rightAnswer;
 
-    @OneToMany(mappedBy = "questionAnswer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<UserAnswerTable> answerFromUser;
 
-    public QuestionAnswerTable(String question, String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer, String rightAnswer) {
-        this.question = question;
-        this.firstAnswer = firstAnswer;
-        this.secondAnswer = secondAnswer;
-        this.thirdAnswer = thirdAnswer;
-        this.fourthAnswer = fourthAnswer;
-        this.rightAnswer = rightAnswer;
-    }
 
 }
