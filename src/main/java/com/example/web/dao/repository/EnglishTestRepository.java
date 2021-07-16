@@ -1,12 +1,12 @@
 package com.example.web.dao.repository;
 
 
-import com.example.web.bean.QuestionAnswerTable;
+import com.example.web.bean.EnglishTest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface QuestionAnswerTableRepository extends JpaRepository<QuestionAnswerTable, Long> {
+public interface EnglishTestRepository extends JpaRepository<EnglishTest, Long> {
 
    /* @Query(value = "SELECT * FROM question_answer WHERE id = ?", nativeQuery = true)
     QuestionAnswerTable findQuestionAnswerTablesById(Long id);

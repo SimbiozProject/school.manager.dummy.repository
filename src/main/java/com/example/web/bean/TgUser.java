@@ -14,8 +14,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "tg_user")
-@ToString(exclude = {"fromStudent", "usersAnswers"})
-public class TgUserTable implements Serializable {
+public class TgUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,15 +41,15 @@ public class TgUserTable implements Serializable {
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
-    private UserRoles roles;
+    private Roles roles;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "course_name")     // insertable=false, updatable=false)
-    private CourseTable courseUser;
+    private Course courseUser;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "group_number") // insertable=false, updatable=false)
-    private GroupTable groupUser;
+    private Group groupUser;
 
     @Column(name = "block_user")
     private Boolean blockUser;
@@ -58,10 +57,5 @@ public class TgUserTable implements Serializable {
     @Column(name = "payment")
     private Boolean payment;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.ALL)
-    private Set<HwFromStudentTable> fromStudent;
-
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.ALL)
-    private Set<UserAnswerTable> usersAnswers;
 
 }

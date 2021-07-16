@@ -13,8 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(name = "courses")
-@ToString(exclude = {"userSet", "groupSet"})
-public class CourseTable implements Serializable {
+public class Course implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,10 +23,6 @@ public class CourseTable implements Serializable {
     @Column(name = "course_name")
     private String courseName;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseUser")
-    private Set<TgUserTable> userSet;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupCourse")
-    private Set<GroupTable> groupSet;
 
 }

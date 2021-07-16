@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class QuestionAnswerTableDaoWebService {
+public class EnglishTestService {
 
     /*@Autowired
     private QuestionAnswerTableRepository questionAnswerTableRepository;

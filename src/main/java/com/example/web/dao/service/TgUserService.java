@@ -3,7 +3,7 @@ package com.example.web.dao.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TgUserTableDaoWebService {
+public class TgUserService {
 
     /*@Autowired
     private TgUserTableDaoWebRepository tgUserTableDaoWebRepository;
