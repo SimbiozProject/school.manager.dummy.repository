@@ -1,20 +1,40 @@
 package com.example.web.controller;
 
-//@Controller
-public class
-EnglishTestController {
+import com.example.web.bean.EnglishTest;
+import org.apache.catalina.LifecycleState;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-   /* @Autowired
-    QuestionAnswerTableDaoWebService questionAnswerTableDaoWebService;
+import java.util.List;
 
-    @GetMapping(value = "test")
-    public ModelAndView testPage() {
-        ModelAndView modelAndView = new ModelAndView("/test");
-        modelAndView.addObject("testList", questionAnswerTableDaoWebService.findAll());
-        return modelAndView;
+@RestController
+public class EnglishTestController {
+
+
+    @GetMapping(value = "/test")
+    public List<EnglishTest> getTest() {
+        return List.of(
+                EnglishTest.builder()
+                        .id(1L)
+                        .question("q")
+                        .firstAnswer("f")
+                        .secondAnswer("s")
+                        .thirdAnswer("th")
+                        .fourthAnswer("fo")
+                        .rightAnswer("r")
+                        .build(),
+                EnglishTest.builder()
+                        .id(2L)
+                        .question("q2")
+                        .firstAnswer("f2")
+                        .secondAnswer("s2")
+                        .thirdAnswer("th2")
+                        .fourthAnswer("fo2")
+                        .rightAnswer("r2")
+                        .build());
     }
 
-    @GetMapping(value = "addTest")
+   /* @GetMapping(value = "addTest")
     public ModelAndView addTestPage() {
         ModelAndView modelAndView = new ModelAndView("/addTest");
         return modelAndView;
