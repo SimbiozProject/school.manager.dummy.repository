@@ -24,15 +24,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.4'
+    testImplementation 'org.springframework.security:spring-security-test'
     implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-hateoas', version: '2.5.3'
-
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config', version: '3.0.4'
 }
 
 test {
@@ -41,7 +43,7 @@ test {
 
 sonarqube {
     properties {
-        property "sonar.qualitygate.wait" , "true"
+        property "sonar.qualitygate.wait", "true"
         property "sonar.projectKey", "simba"
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.login", "06ebb212dc9e37b6b574f80f12ad4bf600f4e25e"
