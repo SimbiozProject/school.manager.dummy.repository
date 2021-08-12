@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public class MyTest {
+class MyTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -34,7 +34,7 @@ public class MyTest {
                 .content("{\"courseName\":\"Java Intensive\"}");
 
         TypeReference<PagedModel<MCourse>> type = new TypeReference<>() {};
-        new ObjectMapper().readValue("[{\"courseName\":\"Java Intensive\"}]", new TypeReference<PagedModel<MCourse>>() {});
+//        new ObjectMapper().readValue("[{\"courseName\":\"Java Intensive\"}]", new TypeReference<PagedModel<MCourse>>() {});
 
         MvcResult result = mockMvc.perform(request)
                 .andDo(print())
