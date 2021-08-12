@@ -18,7 +18,7 @@ build/
 ### IntelliJ IDEA ###
 .idea
 *.iws
-*.iml
+*.imle
 *.ipr
 out/
 !**/src/main/**/out/
@@ -40,4 +40,9 @@ out/
 # resources
 src/main/resources/*.properties
 
-
+# sonar
+db/sonar/sonarqube_data/es7
+db/sonar/sonarqube_data/web
+db/sonar/sonarqube_extensions
+db/sonar/sonarqube_logs
+db/sonar/sonarqube_temp
