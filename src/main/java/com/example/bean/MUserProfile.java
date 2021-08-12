@@ -9,5 +9,4 @@ public class MUserProfile extends MyEntityM {
     @Id
     @GeneratedValue
     Long idUserProfile;
-
 }
