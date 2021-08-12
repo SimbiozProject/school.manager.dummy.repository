@@ -7,5 +7,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface MUserProfileRepository extends JpaRepository<MUserProfile, Long> {
 
-
 }
