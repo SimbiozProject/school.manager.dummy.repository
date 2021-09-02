@@ -1,0 +1,1 @@
+INSERT INTO public.muser_profile (id_user_profile, created, chat_id, user_name) VALUES (1, null, 123456, 'max');
