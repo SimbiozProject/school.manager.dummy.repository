@@ -10,7 +10,7 @@
 ## DEFAULT PORTS
 - http://localhost:8090 - PROCESSOR
 - http://localhost:8091 - WEB
-- http://localhost:8080/swagger-ui/ - Api Documentation in swagger
+- http://localhost:8090/swagger-ui/ - Api Documentation in swagger
 - http://localhost:8888 - CONFIG SERVER
 
 ## START
@@ -40,10 +40,18 @@ user - postgres; password - 1234; DB - bot_db;
 - написали юнит тесты для сервиса и репозитория
 - JP-90:Реализовать ендпоинт, который принимает юзернейм пользователя и генерирует код из 4х символов
 
+
 - user open browser (web)
 - user enter username
 - server find user
 - server generates code
+________________________________________
+- server saves code for user
+- server sends code in tg
+- user enter code received in browser
+- server check code with generated one
+- if code match - server opens home page
+- if code doesn't match - server stay on login page.
 
 ### Что будем делать сегодня:
 Будем начинать с веб части: 
@@ -51,18 +59,16 @@ user - postgres; password - 1234; DB - bot_db;
 - на чатботе сделать эндпоинт, который принимает сообщение (пинкод) и отправляет его дальше пользователю
 - JP-90(доделать): дописать ендпоинт, который отправляет в чатБот код и чатАйди. 
 - Если найден - вернуть 200. Если юзерНейм не найден - вернуть сообщение об ошибке 404.
-- server saves code for user
-- server sends code in tg
-- user enter code recieved in browser
-- server check code with generated one
-- if code match - server opens home page
-- if code doesn't match - server stay on login page.
+
+
+
 
 ### Делаем сами:
-- перевести бот на грейдл
-- подключить сваггер
-- подумать что будет с пин кодом. хранить? перезаписывать? удалять?
-- !!!написать юнит тест для сервиса (юзер логин сервис), написать интеграционный тест для всей цепочки
-- SQL!!!
+- перевести бот на gradle
+- подключить боту swagger
+### Делаем сами, когда Макс смержит ветку
+- написать unit тест для сервиса (юзер логин сервис), написать интеграционный тест для всей цепочки
+- SQL-скрипт для тестирования
+- опционально: подумать что будет с пин кодом. хранить? перезаписывать? удалять? 
 
 
