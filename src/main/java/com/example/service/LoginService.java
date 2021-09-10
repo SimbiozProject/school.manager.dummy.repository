@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class LoginService {
     private final MUserProfileRepository userRepository;
     private final MUserPinRepository pinRepository;
+    private final UserMessageService userMessageService;
 
     public void sendPin(String userName) { // create unit test and mock repo
         MUserProfile user = userRepository.findByUserName(userName)
@@ -31,6 +32,6 @@ public class LoginService {
     }
 
     private void sendToUser(MUserPin pin) {
-
+        userMessageService.sendPin(pin);
     }
 }

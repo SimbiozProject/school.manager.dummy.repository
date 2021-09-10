@@ -19,5 +19,4 @@ public class MUserPin extends MyEntityM {
     private Long chatId;
     private Long idPin;
     private short pin;
-
 }
