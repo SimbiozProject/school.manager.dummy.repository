@@ -38,7 +38,7 @@ out/
 .DS_Store
 
 # resources
-src/main/resources/*.properties
+
 
 # sonar
 db/sonar/sonarqube_data/es7
