@@ -8,5 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface MUserPinRepository extends JpaRepository<MUserPin, Long> {
-
+  Optional<MUserPin> findFirstByChatId(Long chatId);
 }
