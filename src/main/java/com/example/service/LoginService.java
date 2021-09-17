@@ -23,6 +23,15 @@ public class LoginService {
         sendToUser(pin);
     }
 
+    public void verifyPinForUser(String userName, String pin) {
+        MUserProfile user = userRepository.findByUserName(userName)
+            .orElseThrow(EntityNotFoundException::new);
+        MUserPin userPin = pinRepository.findFirstByChatId(user.getChatId()).orElseThrow(EntityNotFoundException::new);
+        if(!String.valueOf(userPin.getPin()).equals(pin)) {
+            throw new RuntimeException("pin not equal!");
+        }
+    }
+
     private MUserPin generatePin(MUserProfile user) {
         var pin = MUserPin.builder()
                 .pin((short)ThreadLocalRandom.current().nextInt(1000, 9999))

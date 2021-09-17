@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class MUserPin extends MyEntityM {
     @Id
     @GeneratedValue
-    private Long chatId;
     private Long idPin;
+    private Long chatId;
     private short pin;
 }
