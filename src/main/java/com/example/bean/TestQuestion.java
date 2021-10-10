@@ -22,6 +22,7 @@ public class TestQuestion extends MyEntityM{
   @GeneratedValue
   Long id;
   private String question;
+  private Long testId;
   @OneToMany(cascade = CascadeType.ALL)
   private List<TestAnswer> answerList;
 }
