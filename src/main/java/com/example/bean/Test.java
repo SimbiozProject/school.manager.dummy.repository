@@ -17,6 +17,6 @@ public class Test {
 
   @Id
   @GeneratedValue
-  private Long id;
+  private Long Id;
   private String name;
 }
